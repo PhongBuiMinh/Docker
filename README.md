@@ -1,4 +1,4 @@
-# CREATE DOCKER IMAGE FROM DOCKERFILE
+## CREATE DOCKER IMAGE FROM DOCKERFILE
 
 1. Create and name a Dockerfile.
 2. Add instructions and commands in Dockerfile.
@@ -7,7 +7,9 @@
 4. Run the image to create a container.
 	- docker run -it -v $PWD:/tmp -w /tmp valgrind:1.0
 
-# DOCKERFILE COMMANDS
+
+## DOCKERFILE COMMANDS
+
 1. FROM (base image)
 	- FROM <ImageName>
 
@@ -31,3 +33,29 @@
 
 8. WORK_DIR (Set the working directory inside the container)
 	- WORKDIR /ai
+
+
+## DOCKER FILE
+DOCKER FILE (DSL(Domain Specific Language), instructions) -(build/compile)-> DOCKER IMAGE -(run)-> DOCKER CONTAINER
+
+
+## ARCHITECTURE OF DOCKER
+
+1. CLENT (docker file)
+	- build, pull, run
+2. DOCKER HOST (PC)
+	- docker daemon (api) -> images + containers
+3. REGISTRY / HUB (storage of static images)
+
+
+## DOCKER HUB
+REGISTRY / HUB (repository, cloud-based service; images)
+	- run, pull, ps, stop, start, login
+
+
+ ## DOCKER ENGINE
+ 1. Server (create, manage: images, netwoeks, volumes)
+ 2. REST API (interaction between server and application)
+ 3. Client (CLI interact with DOCKER)
+  
+   	
