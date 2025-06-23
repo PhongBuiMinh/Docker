@@ -47,7 +47,7 @@ DOCKER FILE (DSL(Domain Specific Language), instructions) -(build/compile)-> DOC
 
 ## DOCKER HUB
 REGISTRY / HUB (repository, cloud-based service; images)
-	- run, pull, ps, stop, start, login
+Commands: run, pull, ps, stop, start, login
 
 
  ## DOCKER ENGINE
