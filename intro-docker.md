@@ -47,29 +47,32 @@ Dockerfile is a **DSL (Domain Specific Language)** for defining how to build an 
 
 ## 📜 Dockerfile Commands
 
-Command	Description
-FROM	Specifies base image
-COPY	Copies files from host into image
-ADD	Downloads files from URLs
-RUN	Executes commands during image build
-CMD	Default command to run in container
-ENTRYPOINT	Fixed command that can't be overridden
-MAINTAINER	Author of the Dockerfile
-WORKDIR	Sets working directory inside container
+| Command      | Description                                      |
+|--------------|--------------------------------------------------|
+| FROM         | Specifies base image                             |
+| COPY         | Copies files from host into image                |
+| ADD          | Downloads files from URLs                        |
+| RUN          | Executes commands during image build             |
+| CMD          | Default command to run in container              |
+| ENTRYPOINT   | Fixed command that can't be overridden           |
+| MAINTAINER   | Author of the Dockerfile                         |
+| WORKDIR      | Sets working directory inside container          |
 
 ## 🧱 Docker Architecture
 
-Layer	Role
-Client	Sends commands (build, pull, run)
-Docker Host	Runs Docker daemon (manages images & containers)
-Registry / Hub	Stores static images (e.g., Docker Hub)
+| Layer           | Role                                              |
+|-----------------|---------------------------------------------------|
+| Client          | Sends commands (build, pull, run)                 |
+| Docker Host     | Runs Docker daemon (manages images & containers) |
+| Registry / Hub  | Stores static images (e.g., Docker Hub)          |
 
 ## ⚙️ Docker Engine Components
 
-Component	Role
-Server	Manages images, containers, volumes, networks
-REST API	Interface between client and server
-Client (CLI)	Command-line tool to interact with Docker
+| Component       | Role                                               |
+|-----------------|----------------------------------------------------|
+| Server          | Manages images, containers, volumes, networks      |
+| REST API        | Interface between client and server                |
+| Client (CLI)    | Command-line tool to interact with Docker          |
 
 ## ☁️ Docker Hub
 
@@ -87,25 +90,30 @@ docker login   # Authenticate with Docker Hub
 
 ## 🧩 Docker Objects
 
-Object	Description
-Image	Read-only template for containers
-Container	Executable instance of an image
-Volume	Persistent data storage shared across containers
-Storage Driver	Low-level mechanism for managing container filesystems
-Network	Connects containers to each other and the outside world
+| Object          | Description                                      |
+|-----------------|--------------------------------------------------|
+| Image           | Read-only template for containers                |
+| Container       | Executable instance of an image                  |
+| Volume          | Persistent data storage shared across containers |
+| Storage Driver  | Low-level mechanism for managing container filesystems |
+| Network         | Connects containers to each other and the outside world |
 
 <!--
 🧑‍🍳 Docker Restaurant Analogy
-Concept	Analogy
-Docker Daemon	👨‍🍳 Chef (does the work)
-Docker Image	📖 Recipe (instructions)
-Docker Container	🍽️ Meal (final product)
-Docker Volume	🧺 Pantry (persistent ingredients/data)
+
+| Concept          | Analogy                                         |
+|------------------|-------------------------------------------------|
+| Docker Daemon    | 👨‍🍳 Chef (does the work)                        |
+| Docker Image     | 📖 Recipe (instructions)                         |
+| Docker Container | 🍽️ Meal (final product)                         |
+| Docker Volume    | 🧺 Pantry (persistent ingredients/data)          |
 
 🗃️ Storage Driver vs Volume
-Action	Role of Storage Driver
-Create volume	Allocates space on host filesystem
-Mount volume	Integrates volume into container FS
-Read/write data	Manages how data is stored/retrieved
-Delete volume	Cleans up data and metadata
+
+| Action           | Role of Storage Driver                          |
+|------------------|--------------------------------------------------|
+| Create volume    | Allocates space on host filesystem               |
+| Mount volume     | Integrates volume into container FS              |
+| Read/write data  | Manages how data is stored/retrieved            |
+| Delete volume    | Cleans up data and metadata                      |
 --!>
