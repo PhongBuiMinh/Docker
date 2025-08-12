@@ -133,8 +133,8 @@ Dockerfile is a **DSL (Domain Specific Language)** for defining how to build an 
    docker run --rm -it -v $PWD:/tmp -w /tmp image # Links host directory to container. Enables access to external files.
    docker run --rm -it image                      # Uses only internal container files. No access to host system.
 	```
-	-v $PWD:/tmp: Mounts current directory into container at /tmp
-	-w /tmp: Sets working directory inside container
+	--v $PWD:/tmp: Mounts current directory into container at /tmp
+	--w /tmp: Sets working directory inside container
 
 ## ⚖️ Copy vs Mount
 -COPY: Adds files during build (static snapshot)
