@@ -1,16 +1,15 @@
 #! /bin/bash
 
-CONTAINERS=$(docker ps -aq)
-
 open -a Docker
 
+CONTAINERS=$(docker ps -aq)
 if [ "$CONTAINERS" != "" ]; then
-# docker container prune # remove stopped containers
 	echo "Removing containers..."
 	docker rm -f $CONTAINERS # -a (all containers); -q (container IDs)
 else
 	echo "No containers to remove."
 fi
+# docker container prune # remove stopped containers
 
 echo "Pruning images..."
 # docker image prune # remove unused images
