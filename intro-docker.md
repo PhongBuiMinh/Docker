@@ -19,9 +19,7 @@ DOCKER FILE - DSL(Domain Specific Language)
 4. Run the image to create a container.
 	- docker run --rm -it -v $PWD:/tmp -w /tmp valgrind:1.0 (-w set /... as working directory, mounts $(PWD) folder(volume) into the container at /tmp) original workdir is hidden, The volume is mounted at /app, so it covers that location.
 MOUNT run (dynamic) vs COPY build (finished project)
-docker run -it -v $(PWD):/ valgrind:1.0 \
-	/bin/sh -c "g++ get_next_line.c get_next_line_utils.c && \
-	valgrind ./a.out"
+docker run -it -v $(PWD):/ valgrind:1.0 /bin/sh -c "g++ get_next_line.c get_next_line_utils.c && valgrind ./a.out"
 
 
 ## DOCKERFILE COMMANDS
