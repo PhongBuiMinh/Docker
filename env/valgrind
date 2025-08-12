@@ -1,0 +1,7 @@
+FROM alpine:latest
+
+MAINTAINER Phong Bui_Minh <phongyas05@gmail.com>
+
+WORKDIR /valgrind
+
+RUN apk add g++ valgrind
