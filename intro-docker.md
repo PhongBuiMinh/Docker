@@ -11,12 +11,11 @@ Docker sets up an isolated environment to run an application.
 ---
 
 ## 🔄 Docker Build Lifecycle
-DOCKERFILE (instructions)
-↓ build
-IMAGE (blueprint)
-↓ run
+DOCKERFILE (instructions)  
+↓ build  
+IMAGE (blueprint)  
+↓ run  
 CONTAINER (packed app)
-
 
 ---
 
@@ -38,11 +37,11 @@ Dockerfile is a **DSL (Domain Specific Language)** for defining how to build an 
    docker run --rm -it -v $PWD:/wdr -w /wdr image # Links host directory to container. Enables access to external files.
    docker run --rm -it image                      # Uses only internal container files. No access to host system.
 	```
--v $PWD:/wdr: Mounts current directory into container at /wdr
+-v $PWD:/wdr: Mounts current directory into container at /wdr  
 -w /wdr: Sets working directory inside container
 
 ## ⚖️ Copy vs Mount
--COPY: Adds files during build (static snapshot)
+-COPY: Adds files during build (static snapshot)  
 -MOUNT: Shares files during run (dynamic access)
 
 ## 📜 Dockerfile Commands
