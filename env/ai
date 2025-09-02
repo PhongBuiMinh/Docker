@@ -1,6 +1,5 @@
+# MAINTAINER Phong_Bui_Minh <contact>
 FROM python:3.11
-
-MAINTAINER Phong Bui_Minh <phongyas05@gmail.com>
 
 WORKDIR /docker
 
@@ -9,4 +8,4 @@ COPY requirements/ai.txt requirements/
 RUN pip install --no-cache-dir ai.txt
 RUN mkdir -p /docker/bin docker/tmp
 
-CMD ["python", "numpy_example.py"]
+# CMD ["python", "numpy_example.py"]

@@ -1,24 +1,31 @@
-PATH_TO_PROJECT = /Users/fbui-min/Desktop/github_cursus/Circle01/get_next_line
-WORKDIR = /docker/program
+DEFAULT= \033[0m
+RED= \033[1;31m
+GREEN= \033[1;32m
 
-all:
-	@./docker_config.sh
-# chmod 777 docker_config
+# Modify path to the project
+PATH_TO_PROJECT = /your/local/path/to/project
+WORKDIR = /docker/project
 
-build_ai:
-	@docker build -f env/artificial_intelligence -t ai .
+ai: run_ai
+valgrind: run_valgrind
 
-ai: build_ai
-	@docker run --rm -it -v $(PATH_TO_PROJECT):$(WORKDIR) ai
+build_%:
+	@echo "$(GREEN)Building $*...$(DEFAULT)"
+	@docker build -f env/$* -t $* .
 
-build_valgrind:
-	@docker build -f env/valgrind -t valgrind .
+run_%: boot_docker build_%
+	@echo "$(GREEN)Running $*...$(DEFAULT)"
+	@docker run --rm -it -v $(PATH_TO_PROJECT):$(WORKDIR) $*
 
-valgrind: build_valgrind
-	@docker run --rm -it -v $(PATH_TO_PROJECT):$(WORKDIR) valgrind
+boot_docker:
+	@docker info > /dev/null 2>&1 || (echo "Docker is not running. Starting it..." && bash scripts/docker_boot.sh)
 
-.PHONY: build_ai ai build_valgrind build_valgrind
+clean:
+	@echo "$(RED)Clearing unused and stopped resources...$(DEFAULT)"
+	@docker system prune -y
 
-# docker run -it -v $(PWD):/ valgrind:1.0 \
-# /bin/sh -c "g++ get_next_line.c get_next_line_utils.c && \
-# valgrind ./a.out"
+fclean:
+	@echo "$(RED)Removing everything...$(DEFAULT)"
+	@docker system prune --all --volumes --force
+
+.PHONY: run_% build_% ai valgrind clean fclean

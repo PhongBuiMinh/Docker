@@ -1,8 +1,7 @@
+# MAINTAINER Phong_Bui_Minh <contact>
 FROM alpine:latest
-
-MAINTAINER Phong Bui_Minh <phongyas05@gmail.com>
 
 WORKDIR /docker
 
-RUN apk add g++ valgrind
-RUN mkdir -p /docker/bin docker/tmp
+RUN apk add g++ valgrind make
+RUN mkdir -p /docker/bin tmp
